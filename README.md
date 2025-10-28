@@ -2,6 +2,16 @@
 
 This document is an abbreviated and aggregated copy of [the nuxt testing docs](https://nuxt.com/docs/4.x/getting-started/testing) to help my memory, ensure understanding, and easy reference.
 
+## Still todo
+
+- code coverage
+- vscode integration / vitest IDE integration
+- visual testing interfaces (browser etc)
+- snapshot testing / visual regression testing
+- scope of changes required to transition from existing tests
+- pipeline integrations
+- boundary definition between storybook and vitest/playwright
+
 ## Helper utils
 
 Nuxt provides a lot of helpers (`@nuxt/test-utils`) for testing.

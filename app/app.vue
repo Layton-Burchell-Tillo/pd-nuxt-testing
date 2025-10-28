@@ -1,6 +1,6 @@
 <template>
   <div>
     <NuxtRouteAnnouncer />
-    <NuxtWelcome />
+    <RandomPokemonImage :pokemon-id="getRandomNumberIntInRange(1, 1025)" />
   </div>
 </template>

@@ -1,4 +1,4 @@
-import { afterAll, assert, beforeAll, describe, test, vi } from 'vitest'
+import { afterAll, beforeAll, describe, expect, test, vi } from 'vitest'
 import {getRandomIntInRange} from './getRandomIntInRange'
 
 describe('getRandomIntInRange', () =>{
@@ -13,8 +13,7 @@ describe('getRandomIntInRange', () =>{
   })
   
   test('returned number is within range', () => {
-    const expected = 103
     const actual = getRandomIntInRange(1, 1025)
-    assert.equal(actual, expected)
+    expect(actual).toBe(103)
   })
 })

@@ -1,4 +1,4 @@
-import { test, vi, describe, beforeEach, assert } from 'vitest'
+import { test, vi, describe, beforeEach, expect } from 'vitest'
 import { mountSuspended } from '@nuxt/test-utils/runtime'
 import { RandomPokemonImage } from '#components'
 
@@ -14,10 +14,10 @@ describe('RandomPokemonImage', () => {
       json: async () => ({ sprites: { front_default: 'https://placehold.co/300' }})
     })))
 
-    const wrapper = await mountSuspended(RandomPokemonImage, { pokemonId: 103 })
+    const wrapper = await mountSuspended(RandomPokemonImage, { props: { pokemonId: 103 } })
 
     const actual = wrapper.text()
 
-    assert.strictEqual(actual, 'Random pokemon image')
+    expect(actual).toBe('Random pokemon image')
   })
 })

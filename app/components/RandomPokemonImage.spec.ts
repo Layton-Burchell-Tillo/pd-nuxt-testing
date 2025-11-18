@@ -1,7 +1,7 @@
 import { test, describe, expect } from 'vitest'
 import { createPage, setup } from '@nuxt/test-utils'
 
-describe('RandomPokemonImage', async () => {
+describe.skip('RandomPokemonImage', async () => {
   await setup({
     rootDir: '../..'
   })

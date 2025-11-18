@@ -1,10 +1,11 @@
 import {describe, test, expect} from 'vitest'
 import {createPage, setup} from '@nuxt/test-utils/e2e'
+import path from 'path';
+
+const screenshotsDir = path.join(process.cwd(), 'screenshots');
 
 describe('testing', async () => {
-  await setup({
-    
-  })
+  await setup()
   
   test('button shows', async () => {
     const page = await createPage('/')
@@ -39,5 +40,16 @@ describe('testing', async () => {
     const dialogIsVisible = await dialog.isVisible()
 
     expect(dialogIsVisible).toBeFalsy()
+  })
+
+  test('snapshot', async () => {
+    const page = await createPage('/')
+    const screenshotBinary = await page.screenshot({
+      fullPage: true,
+      type: 'png',
+    })
+    const screenshotPath = path.join(screenshotsDir, 'index-dialog_closed.png')
+
+    expect(screenshotBinary).toMatchFileSnapshot(screenshotPath)
   })
 })
